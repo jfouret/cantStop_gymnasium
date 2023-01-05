@@ -1,7 +1,7 @@
 
 import numpy as np
 from tensorflow import keras
-from keras import Model, Sequential
+from keras import Model, Sequential, Input
 from keras.layers import Dense, Embedding, Reshape
 from keras.optimizers import Adam
 
@@ -52,7 +52,7 @@ class CantStopAgent():
     model = Sequential()
     model.add(Embedding(self._state_size, 10, input_length=1))
     model.add(Reshape((10,)))
-    model.add(Dense(24, activation='relu'))
+    model.add(Dense(10, activation='relu'))
     model.add(Dense(self._action_size, activation='linear'))
     
     model.compile(loss='mse', optimizer=self._optimizer)
@@ -121,7 +121,7 @@ class CantStopEnv():
   - positive_with_intermediate
   
   """    
-  def __init__(self, num_players, reward_type = False):    
+  def __init__(self, num_players, reward_type):    
     """ Initialize a CantStopEnv instance
 
     Args:
