@@ -1,17 +1,10 @@
 
 import numpy as np
-from tensorflow import keras
-from keras import Model, Sequential, Input
-from keras.layers import Dense, Embedding, Reshape
-from keras.optimizers import Adam
 import gymnasium as gym
 from gymnasium.spaces.utils import flatten, unflatten, flatten_space
 from enum import Enum
 from typing import Type, Tuple, List
 import matplotlib.pyplot as plt
-import random
-from IPython.display import clear_output
-from collections import deque
 
 FIRST_PAIR_ENCODING = np.array([
     [0,1],[0,2],[0,3],[1,2],[1,3],[2,3]
